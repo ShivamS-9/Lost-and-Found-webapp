@@ -1,0 +1,40 @@
+.form {
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 27px;
+  margin-top: 25px;
+  color: whitesmoke;
+}
+button {
+  background-color: #670202;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 200px;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+button:hover {
+  background-color: rgb(113, 113, 113);
+  color: rgb(0, 0, 0);
+}
+
+.head {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+input,
+textarea {
+  background-color: rgb(188, 188, 188);
+}
+
+#image{
+  margin-left: 10px;
+  background-color: black;
+  color: white
+}

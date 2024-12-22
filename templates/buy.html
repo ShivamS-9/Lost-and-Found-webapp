@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy</title>
+    <link rel="stylesheet" type="text/css" href="../static/buy.css">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+</head>
+<body>
+    <div class="bg">
+        <div>
+            <nav class="navigation">
+                <span class="adjust">
+                    <a img src="../static/assets/logo.png" alt="" class="logo" href="{{url_for('index')}}">
+                        <img src="../static/assets/logo.png" alt="" class="logo">
+                    </a>
+                </span>
+                <a href="{{url_for('index')}}"> Home</a>
+                <a href="{{url_for('lost')}}"> Lost Items</a>
+                <a href="{{url_for('borrowed')}}"> Borrowed Items</a>
+                <a href="{{url_for('post')}}"> Report an Item</a>
+                <a href="{{url_for('buy')}}"> Buy</a>
+                <a href="{{url_for('sell')}}"> Sell</a>
+                <a href="{{url_for('about')}}"> About</a>
+            </nav>
+        </div>
+        {% if data %}
+            <div class="head">
+                <p>Items available for Buying/Borrowing:</p>
+            </div>
+            <div class="buy-page">
+                <ul class="buy-list">
+                    {% for row in data %}
+                    <li style="height:30%; width:100%; text-align:right; margin-bottom:20px">
+                        <img style="float:left; height:100%" src="data:image/png;base64,{{row[2]}}">
+                        <h3>{{row[1]}}</h3>
+                        <p>Description: {{row[3]}}</p>
+                        <p>Price: {{row[4]}}</p>
+                        <p>Seller: {{row[5]}}</p>
+                        <p>Contact: {{row[6]}}</p>
+                        <div class="button-group">
+                            <form style="display:inline-block; margin-right:15px;" action="/buy_item_form", method="post">
+                                <input type="hidden" name="item_id" value="{{row[0]}}">
+                                <input type="submit" value="Buy" onclick="buy_item_form">
+                            </form>
+                            <form style="display:inline-block; margin-right:15px;" action="/borrow_item_form", method="post">
+                                <input type="hidden" name="item_id" value="{{row[0]}}">
+                                <input type="hidden" name="item_name" value="{{row[1]}}">
+                                <input type="hidden" name="item_img" value="{{row[2]}}">
+                                <input type="hidden" name="description" value="{{row[3]}}">
+                                <input type="hidden" name="price" value="{{row[4]}}">
+                                <input type="hidden" name="seller_name" value="{{row[5]}}">
+                                <input type="hidden" name="seller_email" value="{{row[6]}}">
+                                <input type="submit" value="Borrow" onclick="borrow_item_form">
+                            </form>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="head">
+                <p>404!, no items available for Buying/Borrowing!</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+<footer>
+    <hr style="width: 90%; margin-left: 5%; margin-right: 5%;">
+    <p>Created for all your 404s by Archit Narwadkar, Shivam Singh, and Ashish Bharadwaj.</p>
+    <p>Lost and Found © 2023</p>
+</footer>
+</html> 

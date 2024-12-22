@@ -1,0 +1,22 @@
+.head {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.text {
+  width: 70%;
+  background-color: #000000;
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+}

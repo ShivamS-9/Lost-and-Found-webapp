@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="../static/index.css">
+        <style>
+            footer {
+                font-size: 16px;
+                width: 100%;
+                text-align: center;
+                bottom: 0;
+                position: relative;
+              }
+              
+              .lg {
+                display: block;
+                margin: auto;
+                margin-top: 0;
+              }
+        </style>
+    </html>
+    <body>
+        <div class="bg">
+            <div>
+                <nav class="navigation">
+                    <span class="adjust">
+                        <a img src="../static/assets/logo.png" alt="" class="logo" href="{{url_for('index')}}">
+                            <img src="../static/assets/logo.png" alt="" class="logo">
+                        </a>
+                    </span>
+                    <a href="{{url_for('index')}}"> Home</a>
+                    <a href="{{url_for('lost')}}"> Lost Items</a>
+                    <a href="{{url_for('borrowed')}}"> Borrowed Items</a>
+                    <a href="{{url_for('post')}}"> Report an Item</a>
+                    <a href="{{url_for('buy')}}"> Buy</a>
+                    <a href="{{url_for('sell')}}"> Sell</a>
+                    <a href="{{url_for('about')}}"> About</a>
+                </nav>
+            </div>
+        </div>
+        <h1 style="margin:5%; text-align:center; font-size: 50px">Welcome to the IIIT Lost and Found Marketplace</h1>
+        <img class="lg" src="../static/assets/logo.png">
+    </body>
+    <footer>
+        <hr style="width: 90%; margin-left: 5%; margin-right: 5%;">
+        <p>Created for all your 404s by Archit Narwadkar, Shivam Singh, and Ashish Bharadwaj.</p>
+        <p>Lost and Found © 2023</p>
+    </footer>
+</html>

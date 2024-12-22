@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Customer Details</title>
+        <link rel="stylesheet" href="../static/borrowdetails.css">
+        <link rel="stylesheet" type="text/css" href="../static/index.css">
+        <link rel="stylesheet" type="text/css" href="../static/index.css">
+        <script src="../static/borrowdetails.js"></script>
+    </head>
+    <body>
+        <div class="bg">
+            <div>
+                <nav class="navigation">
+                    <span class="adjust">
+                        <a img src="../static/assets/logo.png" alt="" class="logo" href="{{url_for('index')}}">
+                            <img src="../static/assets/logo.png" alt="" class="logo">
+                        </a>
+                    </span>
+                    <a href="{{url_for('index')}}"> Home</a>
+                    <a href="{{url_for('lost')}}"> Lost Items</a>
+                    <a href="{{url_for('borrowed')}}"> Borrowed Items</a>
+                    <a href="{{url_for('post')}}"> Report an Item</a>
+                    <a href="{{url_for('buy')}}"> Buy</a>
+                    <a href="{{url_for('sell')}}"> Sell</a>
+                    <a href="{{url_for('about')}}"> About</a>
+                </nav>
+            </div>
+            <div class="head">
+                <h1>Person Details</h1>
+            </div>
+            <div class="form">
+                <form action="/borrow_item" method="post">
+                    <input type="hidden" name="item_id" value="{{data[0]}}">
+                    <input type="hidden" name="item_name" value="{{data[1]}}">
+                    <input type="hidden" name="item_img" value="{{data[2]}}">
+                    <input type="hidden" name="description" value="{{data[3]}}">
+                    <input type="hidden" name="price" value="{{data[4]}}">
+                    <input type="hidden" name="seller_name" value="{{data[5]}}">
+                    <input type="hidden" name="seller_email" value="{{data[6]}}">
+                    <label for="name">Name</label>
+                    <input type="text" name="borrower_name" placeholder="Enter your name" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="borrower_email" placeholder="Enter your email" required>
+                    <button type="submit">Borrow</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <hr style="width: 90%; margin-left: 5%; margin-right: 5%;">
+        <p>Created for all your 404s by Archit Narwadkar, Shivam Singh, and Ashish Bharadwaj.</p>
+        <p>Lost and Found © 2023</p>
+    </footer>
+</html>
