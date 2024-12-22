@@ -50,8 +50,6 @@ This platform simplifies communication, fosters community engagement, and encour
    - Download the project zip file and extract it.
 
 2. **Navigate to the Project Directory**  
-   ```bash
-   cd Blackberry
 
 3. **Run the flask app**  
    ```bash
